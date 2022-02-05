@@ -1,3 +1,3 @@
 it('makes sure the tests run', () => {
-  return true;
+  expect(true).toBe(true);
 })
