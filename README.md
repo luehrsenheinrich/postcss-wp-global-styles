@@ -1,13 +1,15 @@
 # postcss-wp-global-styles
 
-[PostCSS] plugin to render WordPress global styles from a theme.json file..
+[PostCSS] plugin to render WordPress global styles from a theme.json file.
 
 [PostCSS]: https://github.com/postcss/postcss
 
+### Usage
 ```css
 @import "wp-global-styles"
 ```
 
+### Result
 ```css
 :root{
   --wp--preset--color--foreground: #000000;
