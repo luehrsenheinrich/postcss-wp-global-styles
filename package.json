@@ -9,7 +9,7 @@
     "postcss-wp-global-styles"
   ],
   "scripts": {
-    "test": "jest --coverage && eslint ."
+    "test": "jest && eslint ."
   },
   "author": "Hendrik Luehrsen <hl@luehrsen-heinrich.de>",
   "license": "MIT",
