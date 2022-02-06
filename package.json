@@ -2,7 +2,12 @@
   "name": "postcss-wp-global-styles",
   "version": "0.0.0",
   "description": "PostCSS plugin to render WordPress global styles from a theme.json file.",
-  "keywords": ["postcss", "css", "postcss-plugin", "postcss-wp-global-styles"],
+  "keywords": [
+    "postcss",
+    "css",
+    "postcss-plugin",
+    "postcss-wp-global-styles"
+  ],
   "scripts": {
     "test": "jest --coverage && eslint ."
   },
@@ -20,7 +25,9 @@
     "eslint": "^8.0.1",
     "eslint-plugin-jest": "^25.2.2",
     "jest": "^27.3.1",
-    "postcss": "^8.3.11"
+    "lodash": "^4.17.21",
+    "postcss": "^8.3.11",
+    "postcss-cli": "^9.1.0"
   },
   "eslintConfig": {
     "parserOptions": {
@@ -30,7 +37,10 @@
       "node": true,
       "es6": true
     },
-    "extends": ["eslint:recommended", "plugin:jest/recommended"],
+    "extends": [
+      "eslint:recommended",
+      "plugin:jest/recommended"
+    ],
     "rules": {
       "jest/expect-expect": "off"
     }

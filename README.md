@@ -5,14 +5,76 @@
 [PostCSS]: https://github.com/postcss/postcss
 
 ```css
-.foo {
-  /* Input example */
-}
+@import "wp-global-styles"
 ```
 
 ```css
-.foo {
-  /* Output example */
+:root{
+  --wp--preset--color--foreground: #000000;
+  --wp--preset--color--background: #ffffff;
+  --wp--preset--color--primary: #1a4548;
+  --wp--preset--color--secondary: #ffe2c7;
+  --wp--preset--color--tertiary: #F6F6F6;
+}
+
+.has-foreground-color{
+  color: #000000;
+}
+
+.has-foreground-background-color{
+  background-color: #000000;
+}
+
+.has-foreground-border-color{
+  border-color: #000000;
+}
+
+.has-background-color{
+  color: #ffffff;
+}
+
+.has-background-background-color{
+  background-color: #ffffff;
+}
+
+.has-background-border-color{
+  border-color: #ffffff;
+}
+
+.has-primary-color{
+  color: #1a4548;
+}
+
+.has-primary-background-color{
+  background-color: #1a4548;
+}
+
+.has-primary-border-color{
+  border-color: #1a4548;
+}
+
+.has-secondary-color{
+  color: #ffe2c7;
+}
+
+.has-secondary-background-color{
+  background-color: #ffe2c7;
+}
+
+.has-secondary-border-color{
+  border-color: #ffe2c7;
+}
+
+.has-tertiary-color{
+  color: #F6F6F6;
+}
+
+.has-tertiary-background-color{
+  background-color: #F6F6F6;
+}
+
+.has-tertiary-border-color{
+  border-color: #F6F6F6;
 }
 ```
 

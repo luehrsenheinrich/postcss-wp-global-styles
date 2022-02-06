@@ -1,0 +1,9 @@
+@import "wp-global-styles";
+@import "wp-styles";
+@import "wp-media-queries";
+
+body {
+  background-color: #fafafa;
+  color: #444;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
