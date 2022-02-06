@@ -1,19 +1,12 @@
-const getGlobalStylesheet = require('./lib/getGlobalStylesheet');
-const defaultGeneratorfunctions = require('./lib/defaultGeneratorFunctions');
+const processAtRules = require('./lib/processAtRules');
+const processConfig = require('./lib/processConfig');
 
 /**
  * @type {import('postcss').PluginCreator}
  */
-module.exports = (opts = {}) => {
+module.exports = (userConfig = {}) => {
 
-  // Declare some default options.
-  var defaults = {
-    'themeJson': './theme.json',
-    'colorPaletteGenerator': defaultGeneratorfunctions.colorPaletteGenerator,
-  }
-
-  // Merge the default options with the user-defined options.
-  opts = Object.assign(defaults, opts);
+  const config = processConfig(userConfig);
 
   // Hold AtRule instances that have been processed.
   let processed = [];
@@ -29,13 +22,7 @@ module.exports = (opts = {}) => {
        * Process all @import statements in the CSS stylesheets.
        */
       import: (atRule) => {
-        // Only process import statements wich include the string 'wp-global-styles'.
-        // We also ignore the import statements that are already processed.
-        if ( atRule.params.includes('wp-global-styles') && ! processed.includes(atRule) ) {
-          processed.push(atRule);
-          let stylesheet = getGlobalStylesheet(opts);
-          atRule.replaceWith(stylesheet);
-        }
+        processAtRules(atRule, processed, config);
       }
     }
   }
