@@ -2,6 +2,8 @@
 
 [PostCSS] plugin to render WordPress global styles from a theme.json file.
 
+As of now it only supports preset styles.
+
 [PostCSS]: https://github.com/postcss/postcss
 
 ### Usage
