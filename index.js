@@ -23,7 +23,6 @@ module.exports = (userConfig = {}) => {
        */
       '*': (atRule) => {
 				if( atRule.name === 'wp-global-styles' ) {
-					console.log(atRule);
 					processAtRules(atRule, processed, config);
 				}
       }
