@@ -8,7 +8,7 @@ As of now it only supports preset styles.
 
 ### Usage
 ```css
-@import "wp-global-styles"
+@wp-global-styles;
 ```
 
 ### Result
