@@ -21,8 +21,11 @@ module.exports = (userConfig = {}) => {
       /**
        * Process all @import statements in the CSS stylesheets.
        */
-      import: (atRule) => {
-        processAtRules(atRule, processed, config);
+      '*': (atRule) => {
+				if( atRule.name === 'wp-global-styles' ) {
+					console.log(atRule);
+					processAtRules(atRule, processed, config);
+				}
       }
     }
   }

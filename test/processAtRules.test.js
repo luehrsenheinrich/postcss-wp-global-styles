@@ -14,7 +14,7 @@ test( 'the atRule processing to ignore a generic import.', () => {
 } );
 
 test( 'the atRule processing to process our specified import.', () => {
-  const atRule = new AtRule( { name: 'import', params: '"wp-global-styles"' } );
+  const atRule = new AtRule( { name: 'wp-global-styles' } );
 
   const processed = [];
   const config = processConfig( {

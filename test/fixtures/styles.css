@@ -1,4 +1,4 @@
-@import "wp-global-styles";
+@wp-global-styles;
 @import "wp-styles";
 @import "wp-media-queries";
 

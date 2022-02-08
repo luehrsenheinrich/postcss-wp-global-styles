@@ -12,7 +12,3 @@ test('the valid postcss return', () => {
 test('the processing of AtRules', () => {
   expect(plugin.AtRule).toBeDefined();
 });
-
-test('the processing if @import rules', () => {
-  expect(plugin.AtRule.import).toBeDefined();
-});
