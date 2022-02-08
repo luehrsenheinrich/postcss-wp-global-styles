@@ -1,6 +1,6 @@
 {
   "name": "@luehrsenheinrich/postcss-wp-global-styles",
-  "version": "0.0.4",
+  "version": "0.1.0",
   "description": "PostCSS plugin to render WordPress global styles from a theme.json file.",
   "keywords": [
     "postcss",
