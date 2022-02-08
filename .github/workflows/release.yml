@@ -22,6 +22,11 @@ jobs:
           fetch-depth: 0
           token: ${{ secrets.GH_ADMIN_TOKEN }}
 
+      - name: ⚙️ Configure git
+        run: |
+          git config user.name $GITHUB_ACTOR
+          git config user.email gh-actions-${GITHUB_ACTOR}@github.com
+
       - name: Install Node.js
         uses: actions/setup-node@v2
         with:
