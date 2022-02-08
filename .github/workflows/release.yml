@@ -31,9 +31,21 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: 15
+          registry-url: 'https://registry.npmjs.org'
+          scope: '@luehrsenheinrich'
 
       - name: Install dependencies
         uses: bahmutov/npm-install@v1
+
+      - name: ✍️ Create Changelog
+        shell: bash
+        id: changelog
+        run: |
+          log=$(git log $(git describe --tags --abbrev=0)..HEAD --pretty=format:'* %s (%h)')
+          log="${log//'%'/'%25'}"
+          log="${log//$'\n'/'%0A'}"
+          log="${log//$'\r'/'%0D'}"
+          echo "::set-output name=log::$log"
 
       - name: Run tests
         run: npm run test
@@ -62,7 +74,7 @@ jobs:
           prerelease: false
 
       - name: Release to npm
-        run: npm publish
+        run: npx clean-publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
