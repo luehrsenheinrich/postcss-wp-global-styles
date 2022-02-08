@@ -1,5 +1,5 @@
 {
-  "name": "postcss-wp-global-styles",
+  "name": "@luehrsenheinrich/postcss-wp-global-styles",
   "version": "0.0.0",
   "description": "PostCSS plugin to render WordPress global styles from a theme.json file.",
   "keywords": [
@@ -13,7 +13,10 @@
   },
   "author": "Hendrik Luehrsen <hl@luehrsen-heinrich.de>",
   "license": "MIT",
-  "repository": "luehrsenheinrich/postcss-wp-global-styles",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/luehrsenheinrich/postcss-wp-global-styles.git"
+  },
   "engines": {
     "node": ">=12.0.0"
   },
@@ -25,7 +28,6 @@
     "eslint": "^8.0.1",
     "eslint-plugin-jest": "^25.2.2",
     "jest": "^27.3.1",
-    "lodash": "^4.17.21",
     "postcss": "^8.3.11",
     "postcss-cli": "^9.1.0"
   },
@@ -51,5 +53,17 @@
         "statements": 100
       }
     }
+  },
+  "bugs": {
+    "url": "https://github.com/luehrsenheinrich/postcss-wp-global-styles/issues"
+  },
+  "homepage": "https://github.com/luehrsenheinrich/postcss-wp-global-styles#readme",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "dependencies": {
+    "lodash": "^4.17.21"
   }
 }

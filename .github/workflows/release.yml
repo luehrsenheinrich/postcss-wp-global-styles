@@ -1,0 +1,57 @@
+name: 🚀 Create Release
+
+on:
+  # This action is triggered manually.
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'The version number of this release. Runs `npm version`.'
+        required: true
+        default: 'patch'
+
+env:
+  FORCE_COLOR: 2
+jobs:
+  main:
+    name: Node.js 15 Full
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout the repository
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GH_ADMIN_TOKEN }}
+
+      - name: Install Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: 15
+
+      - name: Install dependencies
+        uses: bahmutov/npm-install@v1
+
+      - name: Run tests
+        run: npm run test
+
+      - name: 🔼 Bump version
+        id: version
+        run: echo "::set-output name=version::$(npm version ${{ github.event.inputs.version }} -m 'Tagging %s' -f)"e
+
+      - name: Push the version to git
+        run: |
+            git push && git push --tags
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_ADMIN_TOKEN }}
+
+      - name: 🚀 Create Release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # This token is provided by Actions, you do not need to create your own token
+        with:
+          tag_name: ${{ steps.version.outputs.version }}
+          release_name: Release ${{ steps.version.outputs.version }}
+          body: |
+            ${{ steps.changelog.outputs.log }}
+          draft: false
+          prerelease: false
