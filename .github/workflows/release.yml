@@ -52,7 +52,7 @@ jobs:
 
       - name: 🔼 Bump version
         id: version
-        run: echo "::set-output name=version::$(npm version ${{ github.event.inputs.version }} -m 'Tagging %s' -f)"e
+        run: echo "::set-output name=version::$(npm version ${{ github.event.inputs.version }} -m 'Tagging %s' -f)"
 
       - name: Push the version to git
         run: |
