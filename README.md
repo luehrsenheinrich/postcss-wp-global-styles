@@ -43,7 +43,31 @@ Type: `Function`
 
 Default: [defaultMetadataGenerator]
 
-The function to generate the AST representation for the generated CSS classes.
+The function to generate the AST representation of the generated CSS classes for the color palette.
+
+#### `colorGradientGenerator`
+
+Type: `Function`
+
+Default: [defaultMetadataGenerator]
+
+The function to generate the AST representation of the generated CSS classes for color gradients.
+
+#### `typographyFontSizesGenerator`
+
+Type: `Function`
+
+Default: [defaultMetadataGenerator]
+
+The function to generate the AST representation of the generated CSS classes for the font sizes.
+
+#### `typographyFontFamiliesGenerator`
+
+Type: `Function`
+
+Default: [defaultMetadataGenerator]
+
+The function to generate the AST representation of the generated CSS classes for the font families.
 
 [defaultMetadataGenerator]: https://github.com/luehrsenheinrich/postcss-wp-global-styles/blob/96026b5d9970589630345347db07a0ccce4f955a/lib/defaultGeneratorFunctions.js#L11
 
