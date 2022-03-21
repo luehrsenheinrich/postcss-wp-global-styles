@@ -27,19 +27,19 @@ body {
 }
 ```
 
-## Options
+### Options
 
-### `themeJson`
+#### `themeJson`
 
 Type: `String`
 Default: `./theme.json`
 
 The location where the theme.json will be loaded from.
 
-### `colorPaletteGenerator`
+#### `colorPaletteGenerator`
 
 Type: `Function`
-Default: `[defaultMetadataGenerator]`
+Default: [defaultMetadataGenerator]
 
 The function to generate the AST representation for the generated CSS classes.
 
