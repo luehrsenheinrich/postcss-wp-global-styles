@@ -32,6 +32,7 @@ body {
 #### `themeJson`
 
 Type: `String`
+
 Default: `./theme.json`
 
 The location where the theme.json will be loaded from.
@@ -39,11 +40,12 @@ The location where the theme.json will be loaded from.
 #### `colorPaletteGenerator`
 
 Type: `Function`
-Default: [`defaultMetadataGenerator`]
+
+Default: [defaultMetadataGenerator]
 
 The function to generate the AST representation for the generated CSS classes.
 
-[`defaultMetadataGenerator`]: https://github.com/luehrsenheinrich/postcss-wp-global-styles/blob/96026b5d9970589630345347db07a0ccce4f955a/lib/defaultGeneratorFunctions.js#L11
+[defaultMetadataGenerator]: https://github.com/luehrsenheinrich/postcss-wp-global-styles/blob/96026b5d9970589630345347db07a0ccce4f955a/lib/defaultGeneratorFunctions.js#L11
 
 ## Installation
 
