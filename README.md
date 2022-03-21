@@ -1,88 +1,42 @@
 # postcss-wp-global-styles
 
-[PostCSS] plugin to render WordPress global styles from a theme.json file.
+[PostCSS] plugin to render WordPress global styles from a [theme.json] file and inline them.
 
 As of now it only supports preset styles.
 
 [PostCSS]: https://github.com/postcss/postcss
-
-### Usage
-```css
-@wp-global-styles;
-```
-
-### Result
-```css
-:root{
-  --wp--preset--color--foreground: #000000;
-  --wp--preset--color--background: #ffffff;
-  --wp--preset--color--primary: #1a4548;
-  --wp--preset--color--secondary: #ffe2c7;
-  --wp--preset--color--tertiary: #F6F6F6;
-}
-
-.has-foreground-color{
-  color: #000000;
-}
-
-.has-foreground-background-color{
-  background-color: #000000;
-}
-
-.has-foreground-border-color{
-  border-color: #000000;
-}
-
-.has-background-color{
-  color: #ffffff;
-}
-
-.has-background-background-color{
-  background-color: #ffffff;
-}
-
-.has-background-border-color{
-  border-color: #ffffff;
-}
-
-.has-primary-color{
-  color: #1a4548;
-}
-
-.has-primary-background-color{
-  background-color: #1a4548;
-}
-
-.has-primary-border-color{
-  border-color: #1a4548;
-}
-
-.has-secondary-color{
-  color: #ffe2c7;
-}
-
-.has-secondary-background-color{
-  background-color: #ffe2c7;
-}
-
-.has-secondary-border-color{
-  border-color: #ffe2c7;
-}
-
-.has-tertiary-color{
-  color: #F6F6F6;
-}
-
-.has-tertiary-background-color{
-  background-color: #F6F6F6;
-}
-
-.has-tertiary-border-color{
-  border-color: #F6F6F6;
-}
-```
+[theme.json]: https://developer.wordpress.org/block-editor/how-to-guides/themes/theme-json/
 
 ## Usage
+Add this keyword to one of the CSS files processed by PostCSS.
+
+`css/input.css`:
+```css
+@wp-global-styles;
+
+body {
+  background: black;
+}
+```
+will give you
+```css
+/* ... result of the rendered WordPress global styles inlined into the CSS file */
+
+body {
+  background: black;
+}
+```
+
+## Options
+
+### `themeJson``
+
+Type: `String`
+Default: `./theme.json`
+
+The location where the theme.json will be loaded from.
+
+## Installation
 
 **Step 1:** Install plugin:
 
